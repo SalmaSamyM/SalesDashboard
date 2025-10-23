@@ -1,0 +1,93 @@
+{
+  "todaySales": [
+    {
+      "title": "Total Sales",
+      "value": "$1k",
+      "actualValue": 12450,
+      "description": "+8% from yesterday"
+    },
+    {
+      "title": "Total Orders",
+      "value": "300",
+      "actualValue": 230,
+      "description": "+5% from yesterday"
+    },
+    {
+      "title": "Products Sold",
+      "value": "5",
+      "actualValue": 310,
+      "description": "+1.2% from yesterday"
+    },
+    {
+      "title": "New Customers",
+      "value": "8",
+      "actualValue": 45,
+      "description": "0.5% from yesterday"
+    }
+  ],
+  "visitorInsights": [
+    { "month": "Jan", "loyal": 100, "new": 50, "special": 30 },
+    { "month": "Feb", "loyal": 200, "new": 100, "special": 80 },
+    { "month": "Mar", "loyal": 350, "new": 180, "special": 150 },
+    { "month": "Apr", "loyal": 400, "new": 220, "special": 200 },
+    { "month": "May", "loyal": 380, "new": 200, "special": 180 },
+    { "month": "Jun", "loyal": 300, "new": 120, "special": 100 },
+    { "month": "Jul", "loyal": 200, "new": 80, "special": 60 },
+    { "month": "Aug", "loyal": 150, "new": 50, "special": 40 },
+    { "month": "Sep", "loyal": 250, "new": 120, "special": 90 },
+    { "month": "Oct", "loyal": 350, "new": 180, "special": 150 },
+    { "month": "Nov", "loyal": 400, "new": 220, "special": 200 },
+    { "month": "Dec", "loyal": 380, "new": 200, "special": 180 }
+  ],
+  "totalRevenue": [
+    { "day": "Monday", "online": 12000, "offline": 16000 },
+    { "day": "Tuesday", "online": 14000, "offline": 7000 },
+    { "day": "Wednesday", "online": 13000, "offline": 12000 },
+    { "day": "Thursday", "online": 11000, "offline": 6900 },
+    { "day": "Friday", "online": 1000, "offline": 7000 },
+    { "day": "Saturday", "online": 12500, "offline": 25000 },
+    { "day": "Sunday", "online": 13000, "offline": 7000 }
+  ],
+  "customerSatisfaction": [
+  { "name": "Week 1", "lastMonth": 3000, "thisMonth": 4500 },
+  { "name": "Week 2", "lastMonth": 3500, "thisMonth": 4300 },
+  { "name": "Week 3", "lastMonth": 2800, "thisMonth": 4400 },
+  { "name": "Week 4", "lastMonth": 2800, "thisMonth": 4200 },
+  { "name": "Week 5", "lastMonth": 3000, "thisMonth": 4600 },
+  { "name": "Week 6", "lastMonth": 3200, "thisMonth": 4000 },
+  { "name": "Week 7", "lastMonth": 3400, "thisMonth": 4800 }
+  ],
+  "targetVsReality":  [
+  { "month": "Jan", "reality": 8.823, "target": 1.122 },
+  { "month": "Feb", "reality": 7.823, "target": 12.122 },
+  { "month": "Mar", "reality": 8.827, "target": 12.12 },
+  { "month": "Apr", "reality": 5.3, "target": 7.122 },
+  { "month": "May", "reality": 3, "target": 8.122 },
+  { "month": "June", "reality": 8.823, "target": 5.122 },
+  { "month": "July", "reality": 8.823, "target": 12.122 }
+  ],
+  "topProducts": [
+    { "name": "Home Decor Range", "popularity": 75, "sales": "45" },
+    { "name": "Disney Princess Pink Bag 18'", "popularity": 60, "sales": "29" },
+    { "name": "Bathroom Essentials", "popularity": 50, "sales": "18" },
+    { "name": "Apple Smartwatches", "popularity": 25, "sales": "25" }
+  ],
+
+  "salesByCountry": {
+    "IN": 5000,
+    "CN": 2500,
+    "RU": 1800,
+    "MY": 1400,
+    "FK": 1200,
+    "AR": 1000,
+    "VE": 1070 
+  },
+  "volumeVsService": [
+    { "period": "Jan", "Volume": 100, "Service": 300 },
+    { "period": "Feb", "Volume": 100, "Service": 400 },
+    { "period": "Mar", "Volume": 500, "Service": 350 },
+    { "period": "Jan", "Volume": 200, "Service": 200 },
+    { "period": "Feb", "Volume": 300, "Service": 100 },
+    { "period": "Mar", "Volume": 700, "Service": 350 }
+  ]
+}
