@@ -2,14 +2,11 @@ import React from "react";
 import {
   AreaChart,
   Area,
-  CartesianGrid,
   Tooltip,
 } from "recharts";
-import legendLastMonth from "../../../assets/legendLastMonth.svg";
-import legendThisMonth from "../../../assets/legendThisMonth.svg";
 import { useDashboard } from "../../../context/DashboardContext";
 
-export default function CustomerSatisfactionChart () {
+export default function CustomerSatisfactionChart() {
   const { data } = useDashboard();
   const displayData = data?.customerSatisfaction || [];
   const totalLastMonth = displayData.reduce((sum, d) => sum + d.lastMonth, 0);
@@ -63,7 +60,7 @@ export default function CustomerSatisfactionChart () {
         {/* Last Month */}
         <div className="flex flex-col items-center">
           <div className="flex items-center space-x-2">
-            <img src={legendLastMonth} alt="Last Month" className="w-5 h-5" />
+            <img src="/assets/legendLastMonth.svg" alt="Last Month" className="w-5 h-5" />
             <span className="text-sm font-medium text-[#96A5B8]">Last Month</span>
           </div>
           <span className="font-poppins font-medium">${totalLastMonth.toLocaleString()}</span>
@@ -75,7 +72,7 @@ export default function CustomerSatisfactionChart () {
         {/* This Month */}
         <div className="flex flex-col items-center">
           <div className="flex items-center space-x-2">
-            <img src={legendThisMonth} alt="This Month" className="w-5 h-5" />
+            <img src="/assets/legendThisMonth.svg" alt="This Month" className="w-5 h-5" />
             <span className="text-sm font-medium text-[#96A5B8]">This Month</span>
           </div>
           <span className="font-poppins font-medium ">${totalThisMonth.toLocaleString()}</span>

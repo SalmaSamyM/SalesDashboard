@@ -5,7 +5,7 @@ import { useDashboard } from "../../../context/DashboardContext";
 const colorScale = ["#FFA800", "#8950FC", "#F64E60", "#00AB9A", "#6993FF"];
 
 export default function SalesByCountryChart() {
-    const { data } = useDashboard();
+  const { data } = useDashboard();
   const displayData = data?.salesByCountry || [];
 
   return (

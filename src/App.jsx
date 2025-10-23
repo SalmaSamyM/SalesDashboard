@@ -1,14 +1,14 @@
-import Layout from "./components/layout/Layout"
+import AppContent from "./components/layout/AppContent"
 import { DashboardProvider } from "./context/DashboardContext"
-import Dashboard from "./pages/Dashboard"
+import { MenuProvider } from "./context/MenuContext"
 
 function App() {
   return (
-    <DashboardProvider>
-      <Layout>
-        <Dashboard />
-      </Layout>
-    </DashboardProvider>
+    <MenuProvider>
+      <DashboardProvider>
+         <AppContent />
+      </DashboardProvider>
+    </MenuProvider>
   )
 }
 

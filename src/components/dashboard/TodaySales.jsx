@@ -1,25 +1,22 @@
 import React from "react";
 import CtaCard from "../common/CtaCard";
-import totalSales from "../../assets/todaysales/totalsales.svg";
-import totalOrders from "../../assets/todaysales/totalorder.svg";
-import productSold from "../../assets/todaysales/productsold.svg";
-import newCustomers from "../../assets/todaysales/newcustomers.svg";
-import exportIcon from "../../assets/todaysales/exporticon.svg";
 import { useDashboard } from "../../context/DashboardContext";
+import { handleExport } from "../../utils/handleTodaySaleExport";
 
 const iconMap = {
-  "Total Sales": totalSales,
-  "Total Orders": totalOrders,
-  "Products Sold": productSold,
-  "New Customers": newCustomers,
+  "Total Sales": "/assets/todaysales/totalsales.svg",
+  "Total Orders": "/assets/todaysales/totalorder.svg",
+  "Products Sold": "/assets/todaysales/productsold.svg",
+  "New Customers": "/assets/todaysales/newcustomers.svg",
 };
 
 const backgrounds = ["#FFE2E5", "#FFF4DE", "#DCFCE7", "#F3E8FF"];
 
 export default function TodaySales() {
   const { data } = useDashboard();
-
   const displayData = data?.todaySales || [];
+
+
 
   return (
     <div className="shadow-xl rounded-xl p-6 bg-white h-full">
@@ -30,13 +27,19 @@ export default function TodaySales() {
         </div>
 
         <button
-          className="flex items-center bg-white border border-[#C3D3E2] rounded-xl text-[#0F3659] px-4 py-2 transition"
-          onClick={() => console.log("Export clicked")}
+          className="flex items-center bg-white border border-[#C3D3E2] rounded-xl text-[#0F3659] px-4 py-2 transition hover:bg-[#F8FAFC]"
+          onClick={() => handleExport(displayData)}
+
         >
-          <img src={exportIcon} alt="Export" className="w-4 h-4 mr-2" />
+          <img
+            src="/assets/todaysales/exporticon.svg"
+            alt="Export"
+            className="w-4 h-4 mr-2"
+          />
           Export
         </button>
       </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {displayData.map((item, i) => (
           <CtaCard

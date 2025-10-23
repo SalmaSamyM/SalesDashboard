@@ -1,7 +1,5 @@
 import React from "react";
 import { BarChart, Bar, XAxis, CartesianGrid, Tooltip } from "recharts";
-import targetIcon from "../../../assets/targetsales.svg";
-import realityIcon from "../../../assets/realitysales.svg";
 import { useDashboard } from "../../../context/DashboardContext";
 
 export default function TargetVsRealityChart() {
@@ -54,7 +52,7 @@ export default function TargetVsRealityChart() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
 
-            <img src={realityIcon} className="w-10 h-10" />
+            <img src="/assets/realitysales.svg" className="w-10 h-10" />
             <div>
               <p className="text-sm font-semibold text-gray-800">
                 Reality Sales
@@ -70,7 +68,7 @@ export default function TargetVsRealityChart() {
         {/* Target */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={targetIcon} className="w-10 h-10" />
+            <img src="/assets/targetsales.svg" className="w-10 h-10" />
             <div>
               <p className="text-sm font-semibold text-gray-800">
                 Target Sales

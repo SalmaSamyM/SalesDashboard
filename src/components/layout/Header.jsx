@@ -1,24 +1,34 @@
-import { Bell, Search, ChevronDown } from "lucide-react";
+import { Bell, Search, ChevronDown, Menu } from "lucide-react";
 import { useState } from "react";
-import adminProfile from "../../assets/adminprofile.svg";
-import usFlag from "../../assets/us.svg";
-import frFlag from "../../assets/logo.svg"; // 🇫🇷 Example flag
-import arFlag from "../../assets/logo.svg"; // 🇪🇬 Example flag
+import adminProfile from "/assets/adminprofile.svg";
+import { useMenu } from "../../context/MenuContext";
 
 export default function Header() {
   const [language, setLanguage] = useState("EN");
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { isMenuOpen, setIsMenuOpen } = useMenu();
 
   const flagMap = {
-    EN: usFlag,
-    FR: frFlag,
-    AR: arFlag,
+    EN: "/assets/us.svg",
+    FR: "/assets/logo.png",
+    AR: "/assets/logo.png",
   };
 
   return (
-    <header className="bg-white p-5 flex justify-between items-center">
-      {/* Left: Title */}
-      <h1 className="text-xl font-semibold text-[--color-blue-gray]">Dashboard</h1>
+    <header className="bg-white p-5 flex justify-between items-center shadow-xl">
+      {/* Left: Menu Icon + Title */}
+      <div className="flex items-center gap-4">
+        <button
+          className="lg:hidden text-[var(--color-primary)] p-2 rounded-lg bg-white shadow-md"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <Menu size={22} />
+        </button>
+
+        {/* Dashboard Title */}
+        <h1 className="text-xl font-semibold text-[--color-blue-gray]">
+          Dashboard
+        </h1>
+      </div>
 
       {/* Center: Search */}
       <div className="flex-1 mx-6 max-w-md">
@@ -37,7 +47,6 @@ export default function Header() {
 
       {/* Right: Language, Notification, User */}
       <div className="flex items-center gap-5 relative">
-        {/* Language Selector with Flag */}
         <img
           src={flagMap[language]}
           alt="flag"
@@ -53,16 +62,14 @@ export default function Header() {
           <option value="AR">AR</option>
         </select>
 
-        {/* Notification Icon */}
         <button className="relative text-yellow-500 hover:text-yellow-600 transition">
           <Bell size={22} />
           <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-500 rounded-full"></span>
         </button>
 
-        {/* User Profile Section */}
         <div
           className="flex items-center gap-2 cursor-pointer relative"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <img
             src={adminProfile}
@@ -77,26 +84,10 @@ export default function Header() {
           </div>
           <ChevronDown
             size={16}
-            className={`text-gray-500 transition-transform ${menuOpen ? "rotate-180" : "rotate-0"
-              }`}
+            className={`text-gray-500 transition-transform ${
+              isMenuOpen ? "rotate-180" : "rotate-0"
+            }`}
           />
-
-          {/* Dropdown Menu */}
-          {menuOpen && (
-            <div className="absolute top-12 right-0 w-40 bg-white shadow-lg rounded-lg border border-gray-100 z-10">
-              <ul className="text-sm text-gray-700">
-                <li className="px-4 py-2 hover:bg-gray-50 cursor-pointer">
-                  Profile
-                </li>
-                <li className="px-4 py-2 hover:bg-gray-50 cursor-pointer">
-                  Settings
-                </li>
-                <li className="px-4 py-2 hover:bg-gray-50 cursor-pointer text-red-500">
-                  Logout
-                </li>
-              </ul>
-            </div>
-          )}
         </div>
       </div>
     </header>

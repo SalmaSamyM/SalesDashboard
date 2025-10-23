@@ -8,15 +8,14 @@ import TopProductsList from "../components/dashboard/TopProducts";
 import CustomerSatisfactionChart from "../components/dashboard/charts/CustomerSatisfactionChart";
 import TargetVsRealityChart from "../components/dashboard/charts/TargetVsRealityChart";
 import VolumeServiceLevelChart from "../components/dashboard/charts/VolumeServiceLevelChart";
-import { useDashboard } from "../Context/DashboardContext";
+import { useDashboard } from "../context/DashboardContext";
 
 export default function Dashboard() {
   const { loading, error } = useDashboard();
+
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
-        <Loader message="Loading your dashboard data..." />
-      </div>
+      <Loader/>
     );
   }
 
@@ -30,7 +29,7 @@ export default function Dashboard() {
 
   return (
     <div className="p-4 md:p-6 space-y-8 bg-gray-50 min-h-screen">
-      {/* ===== Section: Sales Overview ===== */}
+      {/* ===== Section: 1 ===== */}
       <section>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
           <div className="lg:col-span-2">
@@ -42,7 +41,7 @@ export default function Dashboard() {
         </div>
       </section>
 
-      {/* ===== Section: Performance Analytics ===== */}
+      {/* ===== Section: 2 ===== */}
       <section>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 items-stretch">
           <div className="lg:col-span-2">
@@ -53,7 +52,7 @@ export default function Dashboard() {
         </div>
       </section>
 
-      {/* ===== Section: Product & Market Insights ===== */}
+      {/* ===== Section: 3 ===== */}
       <section>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 items-stretch">
           <div className="lg:col-span-2">

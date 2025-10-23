@@ -3,7 +3,7 @@ import { Line } from "rc-progress";
 import { useDashboard } from "../../context/DashboardContext";
 
 export default function TopProductsList() {
-    const { data } = useDashboard();
+  const { data } = useDashboard();
   const displayData = data?.topProducts || [];
 
   const colors = ["#0095FF", "#8CFAC7", "#C5A8FF", "#FF8F0D"];
